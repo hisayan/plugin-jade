@@ -12,7 +12,7 @@ export function translate (load) {
       // dependency processing on module load.
       //
       return 'var jade = require' + '("' + runtime_loc + '");\n\n' +
-        'module.exports = ' + Jade.compileClient(text)
+        'module.exports = ' + Jade.compileClient(text, {filename: load.address})
     })
 }
 
